@@ -11,7 +11,7 @@ import {
 } from "../assets";
 import SecTwo from "../components/home/SecTwo";
 import Hero from "../components/services/Hero";
-import Sec3 from "../components/services/SEc3";
+import Sec3 from "../components/services/Sec3";
 
 const card = [
   {
