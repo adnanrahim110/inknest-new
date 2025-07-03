@@ -4,7 +4,7 @@ import { FaAngleDown } from "react-icons/fa6";
 import { faq } from "../../assets";
 import { faqs } from "../../constants";
 
-export default function Faqs({ questionare = faqs }) {
+export default function Faqs({ questionare = faqs, img }) {
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggle = (idx) => {
@@ -12,10 +12,14 @@ export default function Faqs({ questionare = faqs }) {
   };
 
   return (
-    <section className="pt-20 pb-16 relative">
+    <section className={`${img ? "py-24" : "pt-20 pb-16"} relative`}>
       <img
-        src={faq}
-        className="absolute top-1/2 -translate-y-1/2 z-[1] left-10 w-[38%]"
+        src={img || faq}
+        className={`absolute z-[1] ${
+          img
+            ? "bottom-0 w-5/12 left-10"
+            : "top-1/2 -translate-y-1/2 left-10 w-[38%]"
+        }`}
         alt=""
       />
       <div className="container mx-auto">
@@ -36,7 +40,11 @@ export default function Faqs({ questionare = faqs }) {
                         isOpen ? "bg-primary text-white" : "bg-primary-100"
                       }`}
                     >
-                      <span className="font-bold text-base">{item.ques}</span>
+                      <span
+                        className={`font-bold ${img ? "text-xl" : "text-base"}`}
+                      >
+                        {item.ques}
+                      </span>
                       <span
                         className={`transition-transform duration-300 ${
                           isOpen ? "rotate-180" : "rotate-0"
@@ -56,7 +64,11 @@ export default function Faqs({ questionare = faqs }) {
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                           className="overflow-hidden"
                         >
-                          <p className="p-4 bg-primary-50 text-sm text-neutral-600 leading-relaxed">
+                          <p
+                            className={`p-4 bg-primary-50 ${
+                              img ? "text-base" : "text-sm"
+                            } text-neutral-600 leading-relaxed`}
+                          >
                             {item.ans}
                           </p>
                         </motion.div>

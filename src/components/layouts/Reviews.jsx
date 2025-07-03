@@ -1,18 +1,14 @@
-import React from "react";
+import { AnimatePresence, motion } from "motion/react";
+import React, { useState } from "react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  books_r1,
-  reviews_m1,
-  shapes_1,
-  shapes_3,
-  shapes_4,
-  shapes_6,
-} from "../../assets";
+import { shapes_1, shapes_3, shapes_4, shapes_6 } from "../../assets";
+import { reviews } from "../../constants";
 
 const Reviews = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <section className="pb-24 pt-40 bg-neutral-100 overflow-hidden">
       <img
@@ -24,16 +20,30 @@ const Reviews = () => {
         <div className="row items-center">
           <div className="lg:w-1/2">
             <div className="relative">
-              <img
-                src={reviews_m1}
-                className="rounded-full max-w-[360px] grayscale"
-                alt=""
-              />
-              <img
-                src={books_r1}
-                className="absolute right-9 -top-16 max-w-[230px]"
-                alt=""
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={reviews[activeIndex].avatar}
+                  src={reviews[activeIndex].avatar}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.45 }}
+                  className="rounded-full w-[360px] grayscale"
+                  alt=""
+                />
+              </AnimatePresence>
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={reviews[activeIndex].book}
+                  src={reviews[activeIndex].book}
+                  initial={{ opacity: 0, y: -16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -16 }}
+                  transition={{ duration: 0.45 }}
+                  className="absolute right-9 -top-16 w-[230px]"
+                  alt=""
+                />
+              </AnimatePresence>
             </div>
           </div>
           <div className="lg:w-[47%] pl-0">
@@ -48,24 +58,15 @@ const Reviews = () => {
                 slidesPerView={1}
                 spaceBetween={30}
                 className="reviews_slider"
+                onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
               >
-                {[...Array(3)].map((_, idx) => (
+                {reviews.map((review, idx) => (
                   <SwiperSlide key={idx}>
                     <div className="flex flex-col gap-4">
-                      <strong className="text-xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Minus nostrum deleniti a officia quo id quaerat
-                      </strong>
-                      <p className="text-neutral-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quos nesciunt hic in voluptates? Dolor, repudiandae
-                        atque, delectus laboriosam reprehen de rit dignissimos,
-                        vel dolores ratione sit quidem dolorem accusamus nec ess
-                        itatibus rerum qui. Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Officiis, aliquid!
-                      </p>
+                      <strong className="text-xl">{review.bold}</strong>
+                      <p className="text-neutral-700">{review.comment}</p>
                       <div className="mt-5 font-bold text-primary text-xl pl-11 relative before:absolute before:top-1/2 before:-translate-y-1/2 before:left-0 before:w-9 before:h-0.5 before:bg-primary">
-                        John Doe
+                        {review.author}
                       </div>
                     </div>
                   </SwiperSlide>

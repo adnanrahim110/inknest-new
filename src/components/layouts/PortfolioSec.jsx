@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { portfolio_img } from "../../assets";
 import { portfolio } from "../../constants";
 
-const PortfolioSec = () => {
-  const [activeCategory, setActiveCategory] = useState(0);
+const PortfolioSec = ({ step }) => {
+  const [activeCategory, setActiveCategory] = useState(
+    step ? (step === true ? 0 : step) : 0
+  );
   const [activeType, setActiveType] = useState(0);
 
   const activeItem = portfolio[activeCategory]?.content[activeType];
@@ -15,17 +17,18 @@ const PortfolioSec = () => {
             <div className="row items-center">
               <div className="lg:w-5/12">
                 <h2 className="text-white text-5xl font-semibold">
-                  Explore Ink Nest Publishing Services
+                  Sneak Peak In Our Previous Work
                 </h2>
               </div>
               <div className="lg:w-7/12">
                 <p className="text-white">
-                  Behind every successful book launch is a team of passionate
-                  publishing experts and Ink Nest Publishing is no different.
-                  We’ve built long-term partnerships across genres, offering
-                  self publishing services and book publishing support to
-                  clients from all walks of life. Our Services reflects stories
-                  that leave a lasting impact.
+                  Explore our curated portfolio showcasing top-quality book
+                  formatting, ghostwriting, Amazon publishing, custom
+                  illustrations, and bestselling book covers. From debut authors
+                  to seasoned storytellers, our work reflects creativity,
+                  precision, and market-ready excellence. Discover how we’ve
+                  helped authors publish globally, build strong personal brands,
+                  and turn manuscripts into polished, sellable books.
                 </p>
               </div>
               <div>

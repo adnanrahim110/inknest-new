@@ -24,8 +24,12 @@ const Home = () => {
       <Hero />
       <Sec1 />
       <SecTwo
-        title="A Space Where Authors Grow"
-        text="Ink Nest Publishing welcomes writers from all genres and stages. Whether it’s ghostwriting, editing, formatting, or marketing, we offer clear, well-defined services and openly communicate what we do and what we don’t. We do work hard to help your story get the attention it deserves. Our team is here to support your efforts with respect, ethics, and creativity."
+        title="Your book. Your voice. Published professionally With Ink Nest Publishing"
+        text={[
+          "Ink Nest Publishing makes book publishing efficient, professional, and author-focused.Publishing a book on Amazon can be complex, but with the right guidance, it becomes achievable. Ink Nest Publishing provides end-to-end support, including manuscript editing, professional formatting, custom book cover design, and complete Amazon KDP publishing services.",
+          "Whether it's a novel, nonfiction title, children’s book, or memoir, each manuscript receives the same attention to quality and market readiness. Ink Nest Publishing focuses on making your creative work accessible, polished, and ready for readers worldwide.",
+          "Publishing doesn’t have to be overwhelming, Ink Nest Publishing provides the structure, expertise, and support you need to succeed.",
+        ]}
         img={sec2_img}
       />
       <Sec3 />

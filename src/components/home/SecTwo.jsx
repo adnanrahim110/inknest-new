@@ -1,5 +1,5 @@
 import React from "react";
-import { sec2_bg, sec2_shape } from "../../assets";
+import { sec2_bg, sec2_img, sec2_shape } from "../../assets";
 
 const SecTwo = ({ title = "", text, img }) => {
   return (
@@ -32,7 +32,11 @@ const SecTwo = ({ title = "", text, img }) => {
           </div>
           <div className="lg:w-1/2 text-right relative">
             <div className="absolute h-[83%] left-1/2 -translate-x-1/2 -top-5 aspect-square border-[30px] rounded-full z-0 border-primary-200 opacity-10" />
-            <img src={img} alt="" className="inline-block relative z-[1]" />
+            <img
+              src={img || sec2_img}
+              alt=""
+              className="inline-block relative z-[1]"
+            />
           </div>
         </div>
       </div>

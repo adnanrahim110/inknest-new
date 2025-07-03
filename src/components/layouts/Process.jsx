@@ -2,8 +2,9 @@ import React from "react";
 import { process_img, process_img2, shapes_5 } from "../../assets";
 import { processSteps } from "../../constants";
 import Button from "../ui/Button";
+import Heading from "../ui/Heading";
 
-const Process = () => {
+const Process = ({ process = processSteps }) => {
   return (
     <section className="py-20 relative">
       <img
@@ -13,22 +14,15 @@ const Process = () => {
       />
       <div className="container">
         <div className="row justify-center">
-          <div className="lg:w-10/12 text-center">
-            <h2 className="title font-bold text-black mb-2">
-              From Rough Draft to
-              <span className="text-primary"> Finished Book</span>
-            </h2>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum a
-              temporibus deleniti reiciendis labore reprehenderit, provident
-              quae molestias ex rem?
-            </p>
+          <div className="lg:w-8/12 text-center">
+            <Heading title={process.title} highlight={process.highlight} />
+            <p>{process.text}</p>
           </div>
           <div className="mt-20">
             <div className="container">
               <div className="row items-start justify-center gap-x-10">
                 <div className="lg:w-4/12 space-y-20 pr-0">
-                  {processSteps.slice(0, 3).map((item, idx) => {
+                  {process.points.slice(0, 3).map((item, idx) => {
                     return (
                       <div
                         key={idx}
@@ -50,10 +44,14 @@ const Process = () => {
                   })}
                 </div>
                 <div className="lg:w-[23%] pt-12">
-                  <img src={process_img} alt="" />
+                  <img
+                    src={process.img || process_img}
+                    className="scale-[1.15]"
+                    alt=""
+                  />
                 </div>
                 <div className="lg:w-4/12 space-y-20 pl-0 text-right">
-                  {processSteps.slice(3).map((item, idx) => {
+                  {process.points.slice(3).map((item, idx) => {
                     return (
                       <div
                         key={idx}

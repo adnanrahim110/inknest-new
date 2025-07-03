@@ -14,7 +14,8 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path=":slug/*" element={<SlugHandler />} />
+        <Route path=":slug" element={<SlugHandler />} />
+        <Route path=":slug/:subslug" element={<SlugHandler />} />
         <Route path="/thankyou" element={<Thankyou />} />
 
         <Route path="*" element={<Navigate to="/404" replace />} />

@@ -19,23 +19,19 @@ const ServicesSec = () => {
         <div className="row justify-center gap-y-20">
           <div className="lg:w-8/12 text-center">
             <h2 className="title font-bold text-primary mb-1">
-              Write Your Book in Your Terms
+              Our Wide Range Of Services To Choose From
             </h2>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum a
-              temporibus deleniti reiciendis labore reprehenderit, provident
-              quae molestias ex rem?
-            </p>
+            <p>Also available individually!</p>
           </div>
           <div>
-            <div className="grid lg:grid-cols-6">
+            <div className="flex flex-wrap justify-center items-center">
               {exServices.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`px-3 py-5 flex flex-col items-center text-center justify-center gap-7 ${
-                    idx > 5 && idx % 2 !== 0
+                  className={`px-3 py-5 flex flex-col items-center text-center justify-center gap-7 lg:w-1/5 h-[172px] ${
+                    idx > 4 && idx % 2 === 0
                       ? "bg-primary-100"
-                      : idx <= 5 && idx % 2 === 0
+                      : idx <= 4 && idx % 2 === 0
                       ? "bg-primary-100"
                       : ""
                   }`}

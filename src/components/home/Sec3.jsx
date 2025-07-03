@@ -16,7 +16,7 @@ import {
 } from "../../assets";
 import { homeSec3 } from "../../constants";
 
-const Sec3 = () => {
+const GwSlider = () => {
   return (
     <section className="py-20 relative">
       <img
@@ -141,4 +141,4 @@ const Sec3 = () => {
   );
 };
 
-export default Sec3;
+export default GwSlider;

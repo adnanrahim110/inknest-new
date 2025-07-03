@@ -17,9 +17,12 @@ const Footer = () => {
                 alt="Ink Nest Publishing"
               />
               <p className="text-neutral-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-                excepturi non sed corporis nulla distinctio fugiat expedita unde
-                architecto saepe!
+                Ink Nest Publishing helps turn your book idea into a finished,
+                published book. We offer book writing, editing, formatting,
+                cover design, and publishing services for Amazon, Barnes &
+                Noble, and more. Whether it's a novel, memoir, or guidebook, we
+                make the process easy and professional, so your story is ready
+                for the world.
               </p>
             </div>
           </div>

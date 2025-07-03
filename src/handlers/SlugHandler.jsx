@@ -13,15 +13,16 @@ const validTermsSlugs = terms.map((term) =>
 );
 
 const SlugHandler = () => {
-  const { slug } = useParams();
+  const { slug, subslug } = useParams();
 
-  if (!slug) {
+  if (!slug || !`${slug}/${subslug}`) {
     return <Navigate to="/404" replace />;
   }
 
   if (validServiceSlugs.includes(slug)) {
-    const matchedService = services.find((svc) => svc.link.slice(1) === slug);
-
+    const matchedService = services.find(
+      (svc) => svc.link.slice(1) === `${slug}${subslug ? `/${subslug}` : ""}`
+    );
     return (
       <Service
         key={`service-${slug}`}

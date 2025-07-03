@@ -3,12 +3,12 @@ import Button from "../ui/Button";
 
 const Signup = () => {
   return (
-    <div className="bg-black/60 backdrop-blur-xs rounded-bl-[18%] py-10 px-10">
-      <h2 className="text-[40px] font-bold mb-4 text-center text-white">
+    <div className="bg-black/60 backdrop-blur-xs rounded-bl-[18%] py-12 2xl:py-16 px-10">
+      <h2 className="text-[40px] 2xl:text-5xl font-bold mb-8 text-center text-white">
         Let's get started
       </h2>
       <form className="signup_form">
-        <div className="flex flex-col gap-4 items-center *:relative *:w-full  ">
+        <div className="flex flex-col gap-4 2xl:gap-5 items-center *:relative *:w-full  ">
           <div>
             <input
               type="text"
@@ -32,7 +32,7 @@ const Signup = () => {
             />
           </div>
           <div className="flex justify-center">
-            <Button>Send Message</Button>
+            <Button dark>Send Message</Button>
           </div>
         </div>
       </form>

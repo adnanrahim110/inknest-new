@@ -10,43 +10,42 @@ const Cta = () => {
         <div className="row justify-center gap-y-12">
           <div className="lg:w-8/12 text-center">
             <h2 className="title font-bold text-white mb-2">
-              Content that Helps You Win
+              Support That Meets You Where You Write
             </h2>
             <p className="text-neutral-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              excepturi dolore, autem magni, ducimus numquam ullam ab fugiat
-              placeat, nesciunt veritatis omnis nisi eum consectetur.
+              Helping You Tell Your Story, Your Way With the Right Tools and the
+              Right Team
             </p>
           </div>
           <div>
             <div className="flex items-center flex-wrap mb-10">
               <div className="lg:w-1/2 flex justify-center py-5">
-                <Button secondary>Human-Centric AI</Button>
+                <Button secondary>AI-Assisted</Button>
               </div>
               <div className="lg:w-1/2 flex justify-center py-5">
-                <Button secondary>Human-Centric AI</Button>
+                <Button secondary>100% Human</Button>
               </div>
             </div>
             <div className="grid grid-cols-[1fr_1fr_auto_1fr_1fr] gap-5">
               {[
                 {
-                  title: "Self-Services 24/7",
-                  text: "AI generates content fast, but great content needs strategy. Let us transform your bits and bytes into something magical.",
+                  title: "Quick Publishing Help",
+                  text: "Writing fast? We’ll help shape your ideas into real stories anytime, anywhere.",
                 },
                 {
-                  title: "Managed Services",
-                  text: "AI generates content fast, but great content needs strategy. Let us transform your bits and bytes into something magical.",
+                  title: "Guided Services",
+                  text: "Let’s do this together. Our team combines smart tech with real storytelling to build something readers will love.",
                 },
                 {
                   or: "or",
                 },
                 {
-                  title: "Hire Experts",
-                  text: "AI generates content fast, but great content needs strategy. Let us transform your bits and bytes into something magical.",
+                  title: "Work With Real Writers",
+                  text: "Don’t stress over outlines or rewrites. Our professional writers are here to take the weight off your shoulders.",
                 },
                 {
-                  title: "Resonating Content",
-                  text: "AI generates content fast, but great content needs strategy. Let us transform your bits and bytes into something magical.",
+                  title: "Words That Connect",
+                  text: "We don’t just write. We craft content that feels like you and speaks directly to your readers.",
                 },
               ].map((item, idx) => (
                 <div

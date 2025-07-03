@@ -1,40 +1,21 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
-import {
-  sec2_img,
-  services_gw_banner,
-  services_icons_1,
-  services_icons_2,
-  services_icons_3,
-  services_icons_4,
-} from "../assets";
+import { sec2_img, services_gw_banner, services_ill_faq } from "../assets";
+import GwSlider from "../components/home/Sec3";
 import SecTwo from "../components/home/SecTwo";
+import Cta2 from "../components/layouts/Cta2";
+import Faqs from "../components/layouts/Faqs";
+import Form from "../components/layouts/Form";
+import PortfolioSec from "../components/layouts/PortfolioSec";
+import Process from "../components/layouts/Process";
+import Reviews from "../components/layouts/Reviews";
 import Hero from "../components/services/Hero";
+import PortfolioSecService from "../components/services/PortfolioSec";
+import Sec2New from "../components/services/Sec2New";
 import Sec3 from "../components/services/Sec3";
-
-const card = [
-  {
-    title: "Developmental Editing",
-    text: "Our professional editors will critique all aspects of your novel, including its structure, storyline, characters, pacing, and narrative flow. Together, we can mold your tale into something that succeeds beyond your wildest expectations.",
-    img: services_icons_1,
-  },
-  {
-    title: "Copy Editing",
-    text: "Our expert copyeditors pay special attention to polishing the text's mechanics. They ensure that the style, tense, and formatting are consistent and rectify grammatical, punctuation, or spelling issues. The copyediting process makes your writing error-free, concise, and easy to understand.",
-    img: services_icons_2,
-  },
-  {
-    title: "Line Editing",
-    text: "Richmond Publishers professional line editors will scrutinize your work to minor details. They make your text more readable and coherent by fixing sentence structure and word choice. Line editing improves your work, making it easier to read and more interesting to digest.",
-    img: services_icons_3,
-  },
-  {
-    title: "Proofreading",
-    text: "Your text will receive a final polish from our proofreaders before being released to the public. They give your book a thorough once-over to catch any last-minute typos or formatting issues before it reaches your readers' hands.",
-    img: services_icons_4,
-  },
-];
+import Sec3Cards from "../components/services/Sec3Cards";
+import Sec5 from "../components/services/Sec5";
 
 const Service = ({ service, serviceId }) => {
   if (!service) {
@@ -45,28 +26,66 @@ const Service = ({ service, serviceId }) => {
   return (
     <>
       <Helmet>
-        <title>title - Ink Nest Publishing</title>
+        <title>{service.title} - Ink Nest Publishing</title>
       </Helmet>
       <Hero
-        title="lorem ipsum dolor sit amet consectetur"
-        text="lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae? Quisquam, quae?"
-        points={[
-          "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-          "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-          "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-          "lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        ]}
+        title={service.hero.title}
+        text={service.hero.text}
+        points={service.hero.points}
         bg={services_gw_banner}
+        title_second={service.hero.title_second}
+        text_second={service.hero.text_second}
+        quote={service.hero.quote}
       />
-      <SecTwo
-        title="lorem ipsum dolor sit amet consectetur"
-        text="lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae? Quisquam, quae? lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae? Quisquam, quae? lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae? Quisquam, quae? lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae? Quisquam, quae?"
-        img={sec2_img}
-      />
-      <Sec3
-        text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus aspernatur sed dignissimos, quos delectus perspiciatis a necessitatibus reprehenderit reiciendis corporis expedita asperiores aut impedit molestias hic enim provident voluptatem incidunt?"
-        card={card}
-      />
+      {service.secTwo && (
+        <SecTwo
+          title={service.secTwo.title}
+          text={service.secTwo.text}
+          img={service.secTwo.img}
+        />
+      )}
+      {service.sec2_new && (
+        <Sec2New title={service.sec2_new.title} text={service.sec2_new.text} />
+      )}
+      {service.sec3_cards && (
+        <Sec3Cards
+          title={service.sec3_cards.title}
+          highlight={service.sec3_cards.highlight}
+          text={service.sec3_cards.text}
+          cards={service.sec3_cards.cards}
+        />
+      )}
+      {service.homeSec3 && <GwSlider />}
+      {service.sec3 && (
+        <Sec3
+          title={service.sec3.title}
+          highlight={service.sec3.highlight}
+          text={service.sec3.text}
+          img={service.sec3.img}
+          card={service.sec3.cards}
+        />
+      )}
+      {!service.homeSec3 && service.portfolio && (
+        <PortfolioSecService portfolio={service.portfolio} />
+      )}
+      {service.default_portfolio && (
+        <PortfolioSec step={service.default_portfolio} />
+      )}
+      {service.sec5 && (
+        <Sec5
+          title={service.sec5.title}
+          text={service.sec5.text}
+          cards={service.sec5.cards}
+        />
+      )}
+      <Cta2 img={service.cta && service.cta.img} />
+      {service.homeSec3 && service.portfolio && (
+        <PortfolioSecService portfolio={service.portfolio} />
+      )}
+      <Process process={service.sec6} />
+      <Reviews />
+      <Faqs questionare={service.service_faq} img={services_ill_faq} />
+      <Form />
     </>
   );
 };

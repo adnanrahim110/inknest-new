@@ -8,18 +8,20 @@ const Hero = () => {
       <div className="bg_grd min-h-[600px] flex items-center justify-center relative">
         <div className="container">
           <div className="row items-center justify-between">
-            <div className="lg:w-6/12">
+            <div className="lg:w-[54%]">
               <div className="flex flex-col pt-7">
-                <h1 className="text-white text-6xl font-bold mb-3">
-                  Let your story take flight&nbsp;
-                  <span className="text-secondary">
-                    With Ink Nest Publishing
-                  </span>
+                <h1 className="text-white text-5xl font-bold mb-3">
+                  <span className="text-secondary">Ink Nest Publishing </span>
+                  Hassle-Free Amazon Book Publishing Services
                 </h1>
                 <p className="text-neutral-200">
-                  Welcome to Ink Nest Publishing, where words find their wings.
-                  Our mission is to help authors realize their full creative
-                  potential while making publishing accessible and meaningful.
+                  Struggling to publish your book on Amazon? Let Ink Nest
+                  Publishing make it effortless. At Ink Nest Publishing, the
+                  goal is simple: to allow authors to bring their stories to
+                  life while removing the stress and guesswork from the
+                  publishing process. From formatting and cover design to
+                  uploading and marketing guidance, every step is handled with
+                  care and expertise.
                 </p>
                 <div className="self-start mt-8 -ml-0.5">
                   <Button secondary>Get Started</Button>

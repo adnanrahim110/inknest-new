@@ -4,6 +4,30 @@ import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { stories } from "../../assets";
+
+const story = [
+  {
+    title: "Dream Bold, Write Free",
+    text: "No matter where you are in your journey—scribbling your first draft or polishing your final chapter—we’re here to turn your dream into a published reality. With Ink Nest, your words matter.",
+  },
+  {
+    title: "Self-Publishing, Simplified",
+    text: "We make self-publishing easy and empowering. Our team walks you through every step, helping you publish your book on Amazon and beyond without the overwhelm.",
+  },
+  {
+    title: "Design That Attracts",
+    text: "A great book needs a great first impression. From professional covers to beautiful formatting, our design team ensures your story looks as good as it reads.",
+  },
+  {
+    title: "Voices That Are Heard",
+    text: "Turn your book into an immersive experience with our audiobook creation and narration services. Reach new audiences with a voice that brings your story to life.",
+  },
+  {
+    title: "Marketing That Converts",
+    text: "Publishing is just the beginning. With our smart book marketing services, including Amazon book promotion, we help your story find the readers it deserves.",
+  },
+];
+
 const Stories = () => {
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -13,17 +37,19 @@ const Stories = () => {
         <div className="row justify-center">
           <div className="lg:w-8/12 text-center">
             <h2 className="title font-bold text-black mb-3">
-              <span className="text-primary">Your Stories, </span> Our Expertise
+              <span className="text-primary">Where Your Story Finds Its </span>
+              Wings
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A in
-              similique quidem fugit. Repellat fugiat in corporis eveniet error
-              voluptas.
+              Looking to get the best out of your book? Let us help you along.
+              At Ink Nest Publishing, we help you break free from the ordinary
+              and bring your unique story to life with purpose and
+              professionalism.
             </p>
           </div>
           <div>
             <div className="relative font-gentium text-center mt-14 mb-10 flex justify-center items-center gap-10">
-              {[...Array(6)].map((_, idx) => {
+              {story.map((_, idx) => {
                 const isActive = idx === activeIndex;
                 return (
                   <button
@@ -52,18 +78,12 @@ const Stories = () => {
               onSwiper={setSwiperInstance}
               onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             >
-              {[...Array(6)].map((_, idx) => (
+              {story.map((str, idx) => (
                 <SwiperSlide key={idx}>
                   <div className="flex items-center justify-between gap-5 flex-wrap">
                     <div className="lg:w-5/12">
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Commodi similique unde deserunt mollitia nam dolore
-                        voluptatum quisquam tempore totam ullam beatae
-                        perferendis asperiores explicabo, quae iste voluptates!
-                        Illum velit, non voluptas odio odit, asperiores fuga
-                        quidem laborum, fugit culpa at.
-                      </p>
+                      <h2 className="text-4xl mb-5">{str.title}</h2>
+                      <p>{str.text}</p>
                     </div>
                     <div className="relative lg:w-6/12 flex items-end justify-start">
                       <img src={stories} alt="" className="" />
